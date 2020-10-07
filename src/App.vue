@@ -2,11 +2,11 @@
   <div id="app">
     <!-- this h1 is App component's own data -->
     <h1>{{ title }}</h1>
-    <!-- pass props by binding data -->
-    <HelloWorld :msg="msg" />
-    <!-- pass props by providing direct value-->
-    <HelloWorld msg="Direct messgae from App" />
-    <!-- no props data passing & using default props-->
+    <!-- methods in component -->
+    <h2>{{ greeting() }}</h2>
+    <!-- Using globally registered component -->
+    <topics></topics>
+    <!-- Using locally registered component -->
     <HelloWorld />
   </div>
 </template>
@@ -15,7 +15,6 @@
 import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: "App",
   components: {
     HelloWorld,
   },
@@ -25,8 +24,16 @@ export default {
       msg: "Message from App",
     };
   },
+  methods: {
+    greeting() {
+      return "Vue is nice";
+    },
+  },
 };
 </script>
 
 <style>
+h2 {
+  color: purple;
+}
 </style>
