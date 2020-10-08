@@ -1,5 +1,6 @@
 <template>
   <div id="developers">
+    <span>{{ showRecievedProps() }}</span>
     <ul>
       <li
         v-for="developer in developers"
@@ -16,46 +17,20 @@
 <script>
 export default {
   data() {
-    return {
-      developers: [
-        {
-          id: 1,
-          name: "Md. Zakaria Mazumder",
-          speciality: "Senior Software Developer",
-          show: false,
-        },
-        {
-          id: 2,
-          name: "Md. Saikot Mazumder",
-          speciality: "Senior Software Developer",
-          show: false,
-        },
-        {
-          id: 3,
-          name: "Sirjis Khan",
-          speciality: "Fullstack Developer",
-          show: false,
-        },
-        {
-          id: 4,
-          name: "Kanak Hasan",
-          speciality: "Front-end Developer",
-          show: false,
-        },
-        {
-          id: 5,
-          name: "Bappi Khan",
-          speciality: "Front-end Developer",
-          show: false,
-        },
-        {
-          id: 6,
-          name: "Md. Ajgar Hossain Jewel",
-          speciality: "Intern",
-          show: false,
-        },
-      ],
-    };
+    return {};
+  },
+  props: {
+    developers: {
+      type: Array,
+      default: () => {
+        return [];
+      },
+    },
+  },
+  methods: {
+    showRecievedProps() {
+      console.log(this.developers);
+    },
   },
 };
 </script>
