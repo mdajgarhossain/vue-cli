@@ -11,6 +11,7 @@
         <h3 v-show="developer.show">Speciality: {{ developer.speciality }}</h3>
       </li>
     </ul>
+    <button v-on:click="deleteItem">Delete</button>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ export default {
     return {};
   },
   props: {
+    //recieve reference type props
     developers: {
       type: Array,
       default: () => {
@@ -30,6 +32,9 @@ export default {
   methods: {
     showRecievedProps() {
       console.log(this.developers);
+    },
+    deleteItem() {
+      this.developers.pop();
     },
   },
 };

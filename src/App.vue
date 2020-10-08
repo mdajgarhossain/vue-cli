@@ -1,8 +1,10 @@
 <template>
   <div>
-    <Header />
-    <Developers :developers="developers" />
-    <Footer />
+    <Header :headline="headline" />
+    <Developers :developers="developers" :title="title" />
+    <hr />
+    <Developers :developers="developers" :title="title" />
+    <Footer :headline="headline" />
   </div>
 </template>
 
@@ -57,6 +59,7 @@ export default {
           show: false,
         },
       ],
+      headline: "All Developers List",
     };
   },
 };
