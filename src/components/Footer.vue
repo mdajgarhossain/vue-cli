@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { bus } from "../main";
+
 export default {
   data() {
     return {
@@ -18,6 +20,11 @@ export default {
       type: String,
       default: "",
     },
+  },
+  created() {
+    bus.$on("headlineChanged", (data) => {
+      this.headline = data;
+    });
   },
 };
 </script>

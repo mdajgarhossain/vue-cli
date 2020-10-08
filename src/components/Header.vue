@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { bus } from "../main";
+
 export default {
   data() {
     return {
@@ -26,10 +28,13 @@ export default {
   },
   methods: {
     changeHeadline() {
-      this.$emit(
+      /*this.$emit(
         "changeHeadline",
         "Headline has changed by listening event from parent component"
-      );
+      );*/
+      this.headline =
+        "Headline has changed & shared this change to other component without parent component with event bus";
+      bus.$emit("headlineChanged", this.headline);
     },
   },
 };
