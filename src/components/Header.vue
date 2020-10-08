@@ -26,7 +26,10 @@ export default {
   },
   methods: {
     changeHeadline() {
-      this.headline = "Headline has changed from header component";
+      this.$emit(
+        "changeHeadline",
+        "Headline has changed by listening event from parent component"
+      );
     },
   },
 };

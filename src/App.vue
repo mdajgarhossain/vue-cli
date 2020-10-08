@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :headline="headline" />
+    <Header :headline="headline" v-on:changeHeadline="updateHeadline($event)" />
     <Developers :developers="developers" :title="title" />
     <hr />
     <Developers :developers="developers" :title="title" />
@@ -61,6 +61,11 @@ export default {
       ],
       headline: "All Developers List",
     };
+  },
+  methods: {
+    updateHeadline(updatedHeadline) {
+      this.headline = updatedHeadline;
+    },
   },
 };
 </script>
