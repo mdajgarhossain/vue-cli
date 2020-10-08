@@ -32,9 +32,9 @@ export default {
         "changeHeadline",
         "Headline has changed by listening event from parent component"
       );*/
-      this.headline =
-        "Headline has changed & shared this change to other component without parent component with event bus";
-      bus.$emit("headlineChanged", this.headline);
+      // this.headline =
+      //   "Headline has changed & shared this change to other component without parent component with event bus";
+      bus.$emit("headlineChanged", "No data changed in Header component");
     },
   },
 };
