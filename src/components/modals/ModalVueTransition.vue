@@ -13,9 +13,10 @@
       <div class="my-modal" v-if="showModal">
         <h1>Headline</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At tenetur
-          velit blanditiis vel nisi, maxime commodi aperiam voluptatibus
-          aspernatur est.
+          Vue (pronounced /vjuː/, like view) is a progressive framework for
+          building user interfaces. Unlike other monolithic frameworks, Vue is
+          designed from the ground up to be incrementally adoptable. The core
+          library is focused on the view layer only,
         </p>
         <button class="button" @click.stop="showModal = false">
           Close Modal
