@@ -1,5 +1,13 @@
 <template>
   <header>
+    <div>
+      <!-- Show primitive type data-->
+      <h3>{{ language }}</h3>
+      <button @click="changeLang">Change language</button>
+      <!-- Show reference type data -->
+      <h3>{{ framework.title }}</h3>
+      <button @click="changeFramework">Change framework</button>
+    </div>
     <h1>{{ title }}</h1>
     <h3>{{ subTitle }}</h3>
     <p>Address: {{ address }}</p>
@@ -23,10 +31,28 @@ export default {
       type: String,
       default: "",
     },
+    //receive primitive type data
+    language: {
+      type: String,
+      default: "",
+    },
+    //receive reference type data
+    framework: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
   },
   methods: {
     changeHeadline() {
       this.headline = "Headline has changed from header component";
+    },
+    changeLang() {
+      this.language = "Python";
+    },
+    changeFramework() {
+      this.framework.title = "ReactJS";
     },
   },
 };
@@ -39,7 +65,8 @@ header {
 }
 h1,
 h3,
-p {
+p,
+div {
   color: #222;
   text-align: center;
 }

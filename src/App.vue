@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Header :headline="headline" />
+    <Header :headline="headline" :language="language" :framework="framework" />
     <Developers :developers="developers" :title="title" />
     <hr />
     <Developers :developers="developers" :title="title" />
-    <Footer :headline="headline" />
+    <Footer :headline="headline" :language="language" :framework="framework" />
   </div>
 </template>
 
@@ -60,10 +60,16 @@ export default {
         },
       ],
       headline: "All Developers List",
+      //primitive type data
+      language: "Javascript",
+      date: 1995,
+      //reference type data
+      framework: {
+        title: "VueJS",
+      },
     };
   },
 };
 </script>
 
-<style>
-</style>
+<style></style>
