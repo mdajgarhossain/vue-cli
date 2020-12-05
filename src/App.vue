@@ -1,9 +1,9 @@
 <template>
   <div>
     <Header :headline="headline" v-on:changeHeadline="updateHeadline($event)" />
-    <Developers :developers="developers" :title="title" />
+    <Developers :developers="developers" />
     <hr />
-    <Developers :developers="developers" :title="title" />
+    <!-- <Developers :developers="developers" :title="title" /> -->
     <Footer :headline="headline" />
   </div>
 </template>
@@ -70,5 +70,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
