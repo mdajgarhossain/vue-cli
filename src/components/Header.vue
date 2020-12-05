@@ -41,7 +41,7 @@ export default {
       bus.$emit("headlineChanged", "No data changed in Header component");
     },
     changeBus() {
-      this.subHeadline = "This is an Event car";
+      // this.subHeadline = "This is an Event car";
       eventBus.$emit("change-bus", "This is an Event car");
     },
   },
