@@ -42,7 +42,7 @@ export default {
     },
     changeBus() {
       // this.subHeadline = "This is an Event car";
-      eventBus.$emit("change-bus", "This is an Event car");
+      eventBus.$emit("change-bus", this.subHeadline);
     },
   },
 };
