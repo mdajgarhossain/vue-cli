@@ -1,5 +1,11 @@
 <template>
   <header>
+    <!-- Show primitive type data -->
+    <h2>{{ myName }}</h2>
+    <button @click="changePrimitive">Change Primitive</button>
+    <!-- Show reference type data -->
+    <h2>{{ myProfile.age }}</h2>
+    <button @click="changeReference">Change Reference</button>
     <h1>{{ title }}</h1>
     <h3>{{ subTitle }}</h3>
     <p>Address: {{ address }}</p>
@@ -23,6 +29,18 @@ export default {
       type: String,
       default: "",
     },
+    //receive primitive type data
+    myName: {
+      type: String,
+      default: "",
+    },
+    //receive reference type data
+    myProfile: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
   },
   methods: {
     changeHeadline() {
@@ -30,6 +48,12 @@ export default {
         "changeHeadline",
         "Headline has changed by listening event from parent component"
       );
+    },
+    changePrimitive() {
+      this.$emit("change-primitive", "Jewell");
+    },
+    changeReference() {
+      this.myProfile.age = 30;
     },
   },
 };
@@ -39,6 +63,8 @@ export default {
 header {
   background: lightgreen;
   padding: 10px;
+  color: #222;
+  text-align: center;
 }
 h1,
 h3,

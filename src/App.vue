@@ -1,10 +1,16 @@
 <template>
   <div>
-    <Header :headline="headline" v-on:changeHeadline="updateHeadline($event)" />
-    <Developers :developers="developers" :title="title" />
+    <Header
+      :myName="myName"
+      :myProfile="myProfile"
+      :headline="headline"
+      v-on:changeHeadline="updateHeadline($event)"
+      @change-primitive="changePrimitive"
+    />
+    <Developers :developers="developers" />
     <hr />
-    <Developers :developers="developers" :title="title" />
-    <Footer :headline="headline" />
+    <Developers :developers="developers" />
+    <Footer :myName="myName" :myProfile="myProfile" :headline="headline" />
   </div>
 </template>
 
@@ -60,15 +66,24 @@ export default {
         },
       ],
       headline: "All Developers List",
+      //primitive type data
+      myName: "Ajgar",
+      //refernce type data
+      myProfile: {
+        name: "Ajgar Hossain Jewell",
+        age: 27,
+      },
     };
   },
   methods: {
     updateHeadline(updatedHeadline) {
       this.headline = updatedHeadline;
     },
+    changePrimitive(myNewName) {
+      this.myName = myNewName;
+    },
   },
 };
 </script>
 
-<style>
-</style>
+<style></style>

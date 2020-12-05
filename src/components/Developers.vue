@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     showRecievedProps() {
-      console.log(this.developers);
+      // console.log(this.developers);
     },
     deleteItem() {
       this.developers.pop();

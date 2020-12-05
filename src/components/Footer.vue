@@ -1,5 +1,9 @@
 <template>
   <footer>
+    <!-- Show primitive type data -->
+    <h2>{{ myName }}</h2>
+    <!-- Show reference type data -->
+    <h2>{{ myProfile.age }}</h2>
     <h2>{{ headline }}</h2>
     <p>{{ copyright }}</p>
   </footer>
@@ -18,6 +22,18 @@ export default {
       type: String,
       default: "",
     },
+    //receive primitive type data
+    myName: {
+      type: String,
+      default: "",
+    },
+    //receive reference type data
+    myProfile: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
   },
 };
 </script>
@@ -26,6 +42,8 @@ export default {
 footer {
   background: #222;
   padding: 6px;
+  color: lightgreen;
+  text-align: center;
 }
 p {
   color: lightgreen;
